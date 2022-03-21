@@ -1,31 +1,90 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman 
 
-Welcome Martina Martin,
+This website has been created as the thrid Milestone project for Code Institute's Full Stack Software Development Diploma. It was built using Python. GitPod was used for writing the code for this website, as well as committing and pushing to GitHub. Once all the code had been written, Heroku was then used to deploy the website. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
+### View the live website [here]()
+***
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Table of content: 
+ 1. [Site Goals](#Site-Goals)
+ 1. [How to play](#How-to-play)
+ 1. [Features](#Features)
+ 1. [Testing](#Testing)
+ 1. [Bugs](#Bugs)
+ 1. [Unfixed Bugs](#Unfixed-bugs)
+ 1. [Technologies Used](#Technologies-Used)
+ 1. [Deployment](#Deployment)
+ 1. [Credits](#Credits)
+      1. [Code](#Code)
+***
+  
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Site Goals:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The goals for this site are as follows:
+* 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+[Please see the live site here]()
 
-Connect your GitHub repository and deploy as normal.
+*** 
 
-## Constraints
+## How to play:
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+***
 
------
-Happy coding!
+## Features:
+
+***
+
+## Bugs:
+1. 
+
+## Unfixed Bugs: 
+1. 
+***
+[Back to top](#Hangman) 
+
+## Technologies Used:
+For this project, the following technologies were used.  
+
+### Languages:
+* Python
+
+### Frameworks, Libraries, Programs & Applications Used:
+
+#### GitPod
+* GitPod was used for writing all the code for this project. It was also used to commit and push to GitHub.  
+
+#### GitHub 
+* GitHub was used to store this project.
+
+*** 
+[Back to top](#Hangman)
+
+
+
+***
+## Deployment:
+This project was developed using [GitPod](https://gitpod.io/), committed and pushed to [GitHub](https://github.com/) using a GitPod terminal.
+
+Deploying on Heroku
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+
+1. 
+
+***
+## Credits:
+
+### Acknowledgements:
+
+1. I would like to start by thanking Brian O’Hare for being my mentor for this project. 
+
+### Code:
+
+1. 
+
+*** 
+[Back to top](#Hangman) 
