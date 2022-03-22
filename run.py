@@ -13,9 +13,17 @@ from words import words
 
 #print(f'{Colors.PURPLE} This is purple, {Colors.RED} This is red, {Colors.BLUE} This is blue, {Colors.YELLOW} this is yellow and {Colors.GREEN} this is green')
 
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
+
 def clear_screen():
     """ Clears the screen after the instructions and if the user restarts the game"""
-    os.system(cls)
+    os.system('cls')
+    clearConsole()
 
 
 def welcome_message():
@@ -51,27 +59,29 @@ def start_game():
     while lives > 0:
 
      guesses = input('Please guess a letter\n')
+     
+     if guesses in word:
+         print(f'Woohoo {guesses} is correct.')
+         letters_guessed.append(guesses)
+     else:
+         lives = lives - 1
+         print(f"Sorry, {guesses} isn't correct. You have {lives} left. Guess again")
+         letters_guessed.append(guesses)
 
-    if guesses in word:
-        print(f'Woohoo {guesses} is correct.')
-        letters_guessed.append(guesses)
-    elif:
-        print(f"Sorry, {guesses} isn't correct, try again")
-        letters_guessed.append(guesses)
 
+start_game()
 
-
-def check_input():
-     """
-     This is to make sure the user is providing only one letter at a time
-     """
-     try:
-        if len(values) != 1:
-            raise ValueError(
-                f"Exactly 1 values required, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+#def check_input():
+  #   """
+ #    This is to make sure the user is providing only one letter at a time
+ #    """
+ #    try:
+  #      if len(values) != 1:
+  #          raise ValueError(
+  #              f"Exactly 1 values required, you provided {len(values)}"
+  #          )
+  #  except ValueError as e:
+  #      print(f"Invalid data: {e}, please try again.\n")
 
 
 # def end_game():
