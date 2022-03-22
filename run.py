@@ -2,6 +2,10 @@ import random
 import os 
 from words import words
 
+def clear_screen():
+    """ Clears the screen after the instructions and if the user restarts the game"""
+    os.system(cls)
+
 
 def welcome_message():
     """ Welcome message for users"""
@@ -13,23 +17,16 @@ def welcome_message():
     print('Each correct letter guessed will appear in the answer area')
     print('You will be notified if you guess a letter you already guessed')
     print('NOW! LETS PLAY THE GAME!')
-    clear_screen()
-
 
 welcome_message()
 
-
 def pick_word():
+    """This will randomly pick a word from a list of words"""
     word = random.choice(words)
-    return word.lower()
+    return word.lower() #will return all words in lower case
 
-#answer = pick_word()
 
-def clear_screen():
-    """ Clears the screen after the instructions and if the user restarts the game"""
-    os.system(clr)
-
-def start_game():
+def start_game(word):
 
 
 #def end_game()
