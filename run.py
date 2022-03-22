@@ -52,6 +52,14 @@ def start_game():
 
      guesses = input('Please guess a letter\n')
 
+    if guesses in word:
+        print(f'Woohoo {guesses} is correct.')
+        letters_guessed.append(guesses)
+    elif:
+        print(f"Sorry, {guesses} isn't correct, try again")
+        letters_guessed.append(guesses)
+
+
 
 def check_input():
      """
