@@ -1,6 +1,6 @@
 import random
 import os 
-import words from words
+from words import words
 
 
 def welcome_message():
@@ -13,18 +13,24 @@ def welcome_message():
     print('Each correct letter guessed will appear in the answer area')
     print('You will be notified if you guess a letter you already guessed')
     print('NOW! LETS PLAY THE GAME!')
+    clear_screen()
 
 
 welcome_message()
 
 
 def pick_word():
-    with open('words.txt') as f:
-        words = f.readlines()
-        return words
+    word = random.choice(words)
+    return word.lower()
 
+#answer = pick_word()
 
-#def start_game()
+def clear_screen():
+    """ Clears the screen after the instructions and if the user restarts the game"""
+    os.system(clr)
+
+def start_game():
+
 
 #def end_game()
 
