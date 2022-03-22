@@ -48,11 +48,14 @@ def pick_word():
 
 
 def start_game():
-    clear_screen()
+    """
+    This starts the game once the user has entered a name 
+    """
+    clear_screen() #clears the inital instructions from the screen once the game starts
     word = pick_word()
-    answer_area = "_" * len(word)
+    answer_area = "_" * len(word) #creates an area of underscores that equal the lenght of the word
     lives = 7
-    letters_guessed = []
+    letters_guessed = [] #empty list to add the guessed letters to once they are inputted 
     print('Lets start the game')
     print(answer_area)
 
@@ -65,7 +68,7 @@ def start_game():
          letters_guessed.append(guesses)
      else:
          lives = lives - 1
-         print(f"Sorry, {guesses} isn't correct. You have {lives} left. Guess again")
+         print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
          letters_guessed.append(guesses)
 
 
