@@ -38,6 +38,8 @@ def welcome_message():
     print('You will have 7 attemps to guess the correct letters')
     print('Each correct letter guessed will appear in the answer area')
     print('You will be notified if you guess a letter you already guessed')
+    name = input('Please enter a name:\n')
+    print(f'Hello {name}, would you like to play a game?\n')
 
 
 def pick_word():
@@ -69,17 +71,23 @@ def start_game():
          print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
          letters_guessed.append(guesses)
 
+    for letter in word:
+        if letter in letters_guessed:
+            print(f'{letter}')
+        else:
+            print("_")
+
 
 def play():
-    name = input('Please enter a name:\n')
-    print(f'Hello {name}, would you like to play a game?\n')
-    game = input('Please enter Y or N\n')
+    game = input('Please enter Y or N \n')
     if game == 'Y':
         start_game()
     elif game == 'N':
         print(f'Sorry to see you go so soon {name}')
     else:
-        print('Please input a valid anwer')
+        print('Please enter a valid answer')
+        play()
+
 
 
 
@@ -102,7 +110,7 @@ def play():
 def main():
     welcome_message()
     play()
-    start_game()
+    #start_game()
 
 main()
 
