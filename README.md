@@ -40,7 +40,12 @@ The goals for this site are as follows:
 ***
 
 ## Bugs:
-1. 
+1. Pick word function was not working correctly:
+      * When importing the list of words to the run.py file I had incorrectly written the line of code that imports the data. import and from where in the wrong places. Once I corrected this error the pick_word function worked as intended. 
+1. Welcome message was instantly dissapearing when the game was run:
+      * Add a new function that allowed the used to interact more with the game, which inturn keeps the rules on the screen until they are ready to play. 
+1.  Clear screen function was not working:
+      * As this was a new concept to me I was unsure of what the correct paramaters should be. I troubleshooted and found a solution that allows the program to check what os is being used. 
 
 ## Unfixed Bugs: 
 1. 

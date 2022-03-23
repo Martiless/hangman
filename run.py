@@ -40,8 +40,6 @@ def welcome_message():
     print('You will be notified if you guess a letter you already guessed')
 
 
-welcome_message()
-
 def pick_word():
     """This will randomly pick a word from a list of words"""
     word = random.choice(words)
@@ -83,15 +81,8 @@ def play():
     else:
         print('Please input a valid anwer')
 
-play()
 
 
-
-
-
-
-
-start_game()
 
 #def check_input():
   #   """
@@ -108,5 +99,10 @@ start_game()
 
 # def end_game():
 
-# def main():
-# welcome_message()
+def main():
+    welcome_message()
+    play()
+    start_game()
+
+main()
+
