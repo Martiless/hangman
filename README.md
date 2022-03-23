@@ -47,6 +47,10 @@ The goals for this site are as follows:
 1.  Clear screen function was not working:
       * As this was a new concept to me I was unsure of what the correct paramaters should be. I troubleshooted and found a solution that allows the program to check what os is being used. 
 1. Getting the correct letters to add to the answer_area:
+      * I added a line of code into the start game function that included the .join() method. This did work to add the correctly guessed letter to the answer area but it also created more problems as stated below.  
+1. The guessed letters could be guessed over and over again:
+      * 
+1. The correct letter would go into the answer_area servel times:
       * 
 
 ## Unfixed Bugs: 

@@ -84,6 +84,11 @@ def start_game():
      else:
          print('Not a valid letter. Try again :)')
      print(answer_area)
+
+    if correct_answer:
+        print(f'Congratulations {name}, you got it! Woohoo!!')
+    else:
+        print(f'Sorry {name}, you ran out of tries. The word was " {word} "!')
      
      
 
