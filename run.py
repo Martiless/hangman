@@ -1,6 +1,7 @@
 import random
 import os
 from words import words
+import time 
 #from enum import Enum
 
 # class Colors(Enum):
@@ -15,6 +16,9 @@ from words import words
 
 
 def clearConsole():
+    """ 
+    Checks to see what os if the computer is running Windows
+    This piece of code was taken from www.delfstack.com"""
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
         command = 'cls'
@@ -28,24 +32,20 @@ def clear_screen():
 
 def welcome_message():
     """ Welcome message for users"""
-    name = input('Please enter your name\n')
-    print(f'Welcome {name}\n')
+    print('Welcome to Hangman\n')
     print("GAME RULES:\n")
     print('Your guess has to be a valid letter')
     print('You will have 7 attemps to guess the correct letters')
     print('Each correct letter guessed will appear in the answer area')
     print('You will be notified if you guess a letter you already guessed')
-    print('NOW! LETS PLAY THE GAME!')
 
 
 welcome_message()
-
 
 def pick_word():
     """This will randomly pick a word from a list of words"""
     word = random.choice(words)
     return word.lower()  # will return all words in lower case
-
 
 def start_game():
     """
@@ -70,6 +70,25 @@ def start_game():
          lives = lives - 1
          print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
          letters_guessed.append(guesses)
+
+
+def play():
+    name = input('Please enter a name:\n')
+    print(f'Hello {name}, would you like to play a game?\n')
+    game = input('Please enter Y or N\n')
+    if game == 'Y':
+        start_game()
+    elif game == 'N':
+        print(f'Sorry to see you go so soon {name}')
+    else:
+        print('Please input a valid anwer')
+
+play()
+
+
+
+
+
 
 
 start_game()
