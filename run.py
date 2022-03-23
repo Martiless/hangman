@@ -51,31 +51,40 @@ def start_game():
     """
     This starts the game once the user has entered a name 
     """
-    clear_screen() #clears the inital instructions from the screen once the game starts
+    #clears the inital instructions from the screen once the game starts
+    clear_screen()
     word = pick_word()
-    answer_area = "_" * len(word) #creates an area of underscores that equal the lenght of the word
+    #creates area of underscores that equals lenght of the word
+    answer_area = "_" * len(word)
+    #empty list to add the guessed letters to once they are inputted 
+    letters_guessed = []
+    correct_answer = False
     lives = 7
-    letters_guessed = [] #empty list to add the guessed letters to once they are inputted 
-    print('Lets start the game')
+    print('Lets start the game\n')
     print(answer_area)
 
-    while lives > 0:
+    #if lives is more than 0 and correct_answer is false the loop will keep running
+    while lives > 0 and not correct_answer:
 
      guesses = input('Please guess a letter\n')
-     
-     if guesses in word:
-         print(f'Woohoo {guesses} is correct.')
-         letters_guessed.append(guesses)
-     else:
-         lives = lives - 1
-         print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
-         letters_guessed.append(guesses)
+     #checks if the guess is only 1 letter and is in the alphabet
+     if len(guesses) == 1 and guesses.isalpha():
+         if guesses in word:
+             print(f'Woohoo {guesses} is correct.')
+             #add the guess to a list of letters
+             letters_guessed.append(guesses)
+         elif guesses in letters_guessed:
+             print(f'You have already guessed {guesses}, try again!')
+         else:
+             lives = lives - 1
+             print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
+             letters_guessed.append(guesses)
 
-    for letter in word:
-        if letter in letters_guessed:
-            print(f'{letter}')
-        else:
-            print("_")
+     else:
+         print('Not a valid letter. Try again :)')
+     print(answer_area)
+     
+     
 
 
 def play():
@@ -90,27 +99,11 @@ def play():
 
 
 
-
-
-#def check_input():
-  #   """
- #    This is to make sure the user is providing only one letter at a time
- #    """
- #    try:
-  #      if len(values) != 1:
-  #          raise ValueError(
-  #              f"Exactly 1 values required, you provided {len(values)}"
-  #          )
-  #  except ValueError as e:
-  #      print(f"Invalid data: {e}, please try again.\n")
-
-
 # def end_game():
 
 def main():
     welcome_message()
     play()
-    #start_game()
 
 main()
 
