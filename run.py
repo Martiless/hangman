@@ -82,6 +82,11 @@ def start_game():
      else:
          print('Not a valid letter. Try again :)')
      print(answer_area)
+
+    if correct_answer == True:
+        print('Woohoo you guessed the word! Winner!!')
+    else:
+        print(f'You are out of lives, sorry about that. The word was {word}. Better luck next time!')
      
 
 
@@ -93,7 +98,7 @@ def play():
     if game == 'Y':
         start_game()
     elif game == 'N':
-        print(f'Sorry to see you go so soon {name}')
+        print('Sorry to see you go so soon!')
     else:
         print('Please enter a valid answer')
         play()
