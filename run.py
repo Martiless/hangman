@@ -11,7 +11,6 @@ import time
 #YELLOW = 4
 #PURPLE = 5
 
-
 #print(f'{Colors.PURPLE} This is purple, {Colors.RED} This is red, {Colors.BLUE} This is blue, {Colors.YELLOW} this is yellow and {Colors.GREEN} this is green')
 
 
@@ -28,7 +27,6 @@ def clear_screen():
     """ Clears the screen after the instructions and if the user restarts the game"""
     os.system('cls')
     clearConsole()
-
 
 def welcome_message():
     """ Welcome message for users"""
@@ -84,19 +82,13 @@ def start_game():
      else:
          print('Not a valid letter. Try again :)')
      print(answer_area)
-
-    if correct_answer:
-        print(f'Congratulations {name}, you got it! Woohoo!!')
-    else:
-        print(f'Sorry {name}, you ran out of tries. The word was " {word} "!')
-     
      
 
 
 def play():
     """
     Asked the user if they would like to play the game and calls
-    start_game if they answe yes"""
+    start_game if they answer yes"""
     game = input('Please enter Y or N \n')
     if game == 'Y':
         start_game()
