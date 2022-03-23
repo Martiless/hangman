@@ -94,6 +94,9 @@ def start_game():
 
 
 def play():
+    """
+    Asked the user if they would like to play the game and calls
+    start_game if they answe yes"""
     game = input('Please enter Y or N \n')
     if game == 'Y':
         start_game()
