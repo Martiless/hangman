@@ -73,6 +73,7 @@ def start_game():
              print(f'Woohoo {guesses} is correct.')
              #add the guess to a list of letters
              letters_guessed.append(guesses)
+             answer_area = "".join(guesses)
          elif guesses in letters_guessed:
              print(f'You have already guessed {guesses}, try again!')
          else:

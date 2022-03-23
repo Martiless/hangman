@@ -46,6 +46,8 @@ The goals for this site are as follows:
       * Add a new function that allowed the used to interact more with the game, which inturn keeps the rules on the screen until they are ready to play. 
 1.  Clear screen function was not working:
       * As this was a new concept to me I was unsure of what the correct paramaters should be. I troubleshooted and found a solution that allows the program to check what os is being used. 
+1. Getting the correct letters to add to the answer_area:
+      * 
 
 ## Unfixed Bugs: 
 1. 
