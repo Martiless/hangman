@@ -72,10 +72,11 @@ def start_game():
              #add the guess to a list of letters
              letters_guessed.append(guesses)
              answer_area = guesses.join(answer_area)
-         elif guesses in letters_guessed:
+         if guesses in letters_guessed:
              print(f'You have already guessed {guesses}, try again!')
          else:
-             lives = lives - 1
+             #takes away a life for every wrong guess
+             lives = lives - 1 
              print(f"Sorry, {guesses} isn't correct. You have {lives} lives left. Guess again")
              letters_guessed.append(guesses)
 
