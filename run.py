@@ -42,7 +42,13 @@ def welcome_message():
     print('You will have 7 attemps to guess the correct letters')
     print('Each correct letter guessed will appear in the answer area')
     print('You will be notified if you guess a letter you already guessed')
-    name = input('Please enter a name:\n')
+    while True:
+        name = input('Please enter a name:\n')
+        if not name.isalpha():
+            print('Not a valid input, please try again')
+        else:
+            break
+
     print(f'Hello {name}, would you like to play a game?\n')
 
 
@@ -73,7 +79,7 @@ def start_game():
     # if lives is more than 0 and correct_answer is false
     # the loop will keep running
     while lives > 0 and not correct_answer:
-        guesses = input('Please guess a letter\n')
+        guesses = input('Please guess a letter\n').lower()
         # checks if the guess is only 1 letter and is in the alphabet
         if len(guesses) == 1 and guesses.isalpha():
             if guesses in word:
@@ -106,7 +112,7 @@ def play():
     Asked the user if they would like to play the game and calls
     start_game if they answer yes
     """
-    game = input('Please enter Y or N \n')
+    game = input('Please enter Y or N \n').upper()
     if game == 'Y':
         start_game()
     elif game == 'N':
