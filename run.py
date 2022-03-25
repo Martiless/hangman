@@ -86,6 +86,9 @@ def start_game():
     # if lives is more than 0 and correct_answer is false
     # the loop will keep running
     while lives > 0 and not correct_answer:
+        if ''.join(answer_area) == word:
+            print('Woohoo you guessed the word! Winner!!')
+            break
         guesses = input('Please guess a letter\n').lower()
         # checks if the guess is only 1 letter and is in the alphabet
         if len(guesses) == 1 and guesses.isalpha():
@@ -110,9 +113,7 @@ def start_game():
         answer_area = ''.join(answer_list)
         print(answer_area)
 
-    if correct_answer is True:
-        print('Woohoo you guessed the word! Winner!!')
-    else:
+    if lives == 0:
         print(f"""You are out of lives, sorry about that.
         The word was {word}. Better luck next time!""")
 
