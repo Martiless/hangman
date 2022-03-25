@@ -2,14 +2,20 @@ import random
 import os
 from words import words
 # import time
-#  from enum import Enum
+# from enum import Enum
+
 
 # class Colors(Enum):
-# RED = 1
-# GREEN = 2
-# BLUE = 3
-# YELLOW = 4
-# PURPLE = 5
+#   {
+#    "RED" : "\u001b[31m",
+#     "GREEN" : "\u001b[32m",
+#    "BLUE" : "\u001b[34m",
+#    "YELLOW" : "\u001b[33m",
+#    "PURPLE" : "\u001b[35m"
+# }
+
+
+# print(f'{Colors.BLUE} This is blue text.')
 
 
 def clear_console():
@@ -67,7 +73,7 @@ def start_game():
     # clears the inital instructions from the screen once the game starts
     clear_screen()
     word = pick_word()
-    # creates area of underscores that equals lenght of the word
+    # creates area of underscores that equals length of the word
     answer_area = "_" * len(word)
     # empty list to add the guessed letters to once they are inputted
     letters_guessed = []
@@ -86,8 +92,12 @@ def start_game():
                 print(f'Woohoo {guesses} is correct.')
                 # add the guess to a list of letters
                 letters_guessed.append(guesses)
-                answer_area = guesses.join(answer_area)
-            if guesses in letters_guessed:
+                for letters in range(len(word)):
+                    if guesses == word[letters]:
+                        answer_list[letters] = guesses
+                        word[letters] == answer_area[letters]
+                        answer_area = guesses.join(answer_area)
+            elif guesses in letters_guessed:
                 print(f'You have already guessed {guesses}, try again!')
             else:
                 # takes away a life for every wrong guess
@@ -102,9 +112,11 @@ def start_game():
 
     if correct_answer is True:
         print('Woohoo you guessed the word! Winner!!')
+        break
     else:
         print(f"""You are out of lives, sorry about that.
         The word was {word}. Better luck next time!""")
+        break
 
 
 def play():
