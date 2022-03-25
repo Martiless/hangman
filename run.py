@@ -75,6 +75,7 @@ def start_game():
     word = pick_word()
     # creates area of underscores that equals length of the word
     answer_area = "_" * len(word)
+    answer_list = list(answer_area)
     # empty list to add the guessed letters to once they are inputted
     letters_guessed = []
     correct_answer = False
@@ -88,35 +89,32 @@ def start_game():
         guesses = input('Please guess a letter\n').lower()
         # checks if the guess is only 1 letter and is in the alphabet
         if len(guesses) == 1 and guesses.isalpha():
-            if guesses in word:
+            if guesses in letters_guessed:
+                print(f'You have already guessed {guesses}, try again!')
+            elif guesses in word:
                 print(f'Woohoo {guesses} is correct.')
-                # add the guess to a list of letters
-                letters_guessed.append(guesses)
                 for letters in range(len(word)):
                     if guesses == word[letters]:
                         answer_list[letters] = guesses
                         word[letters] == answer_area[letters]
-                        answer_area = guesses.join(answer_area)
-            elif guesses in letters_guessed:
-                print(f'You have already guessed {guesses}, try again!')
             else:
                 # takes away a life for every wrong guess
                 lives = lives - 1
                 print(f"""Sorry, {guesses} isn't correct.
                 You have {lives} lives left. Guess again""")
-                letters_guessed.append(guesses)
+            # add the guess to a list of letters
+            letters_guessed.append(guesses)
 
         else:
             print('Not a valid letter. Try again :)')
+        answer_area = ''.join(answer_list)
         print(answer_area)
 
     if correct_answer is True:
         print('Woohoo you guessed the word! Winner!!')
-        break
     else:
         print(f"""You are out of lives, sorry about that.
         The word was {word}. Better luck next time!""")
-        break
 
 
 def play():
