@@ -72,6 +72,9 @@ For this project, the following technologies were used.
 #### GitHub 
 * GitHub was used to store this project.
 
+### Heroku 
+* Heroku was used to delpoy the project. Please see below for deployment method. 
+
 *** 
 [Back to top](#Hangman)
 
