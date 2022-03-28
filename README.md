@@ -87,9 +87,22 @@ For this project, the following technologies were used.
 This project was developed using [GitPod](https://gitpod.io/), committed and pushed to [GitHub](https://github.com/) using a GitPod terminal.
 
 Deploying on Heroku
-To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+To deploy this page to [Heroku](https://id.heroku.com/login) from its GitHub repository, the following steps were taken:
 
-1. 
+1. Create a new app in Heroku.
+1. Select "New" and "Create new app".
+1. Name the new app and click "Create new app".
+1. Click on the "Settings" tab at the top of the page
+1. Open the "Reveal Config Vars" section and input the following information -  KEY: PORT, VALUE: 8000. 
+      * Nothing else is needed here for this project
+1. Under the Config Vars section in "Settings" select "BuildPack" and select Python and Nodejs, 
+      * Making sure they are in this order.
+1. Now go to the "Deploy" tab at the top of the page and select your deploy method and repository.
+1. In "Delpoyment Method" click on "GitHub" to connect them. 
+1. Once they are connected search for the repository you want and hit "connect".
+1. Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section. 
+      * *Note, if you click on Automatic Deploys, you will still need to hit deploy branch to build the site* 
+1. Heroku will now deploy the site.
 
 ***
 ## Credits:
@@ -100,7 +113,8 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 
 ### Code:
 
-1. 
-
+1. The clear console function was taken from [www.delfstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
+1. I used various coder forums at times when I had difficulty with aspects of the code. The use of sites such as [Geeks for Geeks](https://www.geeksforgeeks.org/) and [Stack Overflow](https://stackoverflow.com/) was hugely helpful.
+1. I also used [YouTube](https://www.youtube.com/) vidoes from [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t=782s) for the hangman game and [Scratch Tutorials](https://www.youtube.com/watch?v=u4QmAIoo4i0&t=81s) for the colors, *(however I did not go ahead with this method of using colors.)*
 *** 
 [Back to top](#Hangman) 
