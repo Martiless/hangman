@@ -49,11 +49,13 @@ The goals for this site are as follows:
 1. Getting the correct letters to add to the answer_area:
       * I added a line of code into the start game function that included the .join() method. This did work to add the correctly guessed letter to the answer area but it also created more problems as stated below.  
 1. The guessed letters could be guessed over and over again:
-      * 
+      * I rearranged the if statement in the start game function. Instead of the correct answer being checked first and the user getting a notice to say it was in the work, I changed it so the program checked if the letter had been picked already first, then if it wasn't in the word and then if it was. This solved the issue of being about to guess a correct letter over and over again.
 1. The correct letter would go into the answer_area servel times:
-      * 
+      * Once I had figured out that I needed to use .join() to add the correct letters to the answer area, I began to encounter another problem, that being the letter would appear several times in the answer area. I decided to use a debugger and see if I could locate the issue. I had put the wrong variable into the .join() method, which I did not pick up on at first glance.
+1. Colors not working:
+      * I initially tried to use "from colorama import Fore, Back, Style" this working in the github enviroment but when I looked at it in Hekoku it was throwing up an error. I solved this by creating a class called Colors in a seperate python file and then imported that classes into the main game file. This soloved the problem and the colors worked correctly in Heruko. 
 
-## Unfixed Bugs: 
+
 1. 
 ***
 [Back to top](#Hangman) 

@@ -15,15 +15,6 @@ def clear_console():
     os.system(command)
 
 
-def clear_screen():
-    """
-    Clears the screen after the instructions
-    and if the user restarts the game
-    """
-    os.system('cls')
-    clear_console()
-
-
 def welcome_message():
     """
     Welcome message for users
@@ -67,7 +58,7 @@ def start_game():
     This starts the game once the user has entered a name
     """
     # clears the inital instructions from the screen once the game starts
-    clear_screen()
+    clear_console()
     word = pick_word()
     # creates area of underscores that equals length of the word
     answer_area = "_" * len(word)
@@ -115,21 +106,19 @@ def start_game():
         print(f"""You are out of lives, sorry about that.
         The word was {word}. Better luck next time!""")
 
-
 def play():
-    """
-    Asked the user if they would like to play the game and calls
-    start_game if they answer yes
-    """
-    game = input('Please enter Y or N \n').upper()
-    if game == 'Y':
-        start_game()
-    elif game == 'N':
-        print('Sorry to see you go so soon!')
-    else:
-        print('Please enter a valid answer')
-        play()
-
+        """
+        Asked the user if they would like to play the game and calls
+        start_game if they answer yes
+        """
+        game = input('Please enter Y or N \n').upper()
+        if game == 'Y':
+            start_game()
+        elif game == 'N':
+            print('Sorry to see you go so soon!')
+        else:
+            print('Please enter a valid answer')
+            play()
 
 # def end_game():
 
