@@ -62,6 +62,7 @@ def start_game():
     # clears the inital instructions from the screen once the game starts
     clear_console()
     word = pick_word()
+    word_len = len(word)
     # creates area of underscores that equals length of the word
     answer_area = "_" * len(word)
     answer_list = list(answer_area)
