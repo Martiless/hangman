@@ -19,15 +19,17 @@ def welcome_message():
     """
     Welcome message for users
     """
-    print(f""" {Colors.red}
-         _   _
-        | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
-        | |_| |/ _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\
-        |  _  | (_| | | | | (_| | | | | | | (_| | | | |
-        |_| |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|
-                            |___/
-        """
-        )
+
+    print(f"""{Colors.red}
+    
+██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║
+███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║
+██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+     """
+     )
     print(f'{Colors.reset}')
     print('Welcome to Hangman\n')
     print("GAME RULES:\n")
@@ -68,6 +70,7 @@ def start_game():
     correct_answer = False
     lives = 7
     print('Lets start the game\n')
+    print(f'Hint: The word is {word_len} letters long\n')
     print(answer_area)
 
     # if lives is more than 0 and correct_answer is false

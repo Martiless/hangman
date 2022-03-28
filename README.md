@@ -18,7 +18,7 @@ This website has been created as the thrid Milestone project for Code Institute'
  1. [Technologies Used](#Technologies-Used)
  1. [Deployment](#Deployment)
  1. [Credits](#Credits)
-      1. [Code](#Code)
+ 1. [Acknowledgements](#acknowledgements)
 ***
   
 
@@ -32,6 +32,14 @@ The goals for this site are as follows:
 *** 
 
 ## How to play:
+The traditional Hangman games was played with pen and paper. It typically involved two players, one of which came up with the word and the other guessed the letters. For each incorrect answer a body part gets added to the image until the second player either guesses the word or runs out the lives.
+
+In this version of the game, the player will enter a name to start the game.
+The compute will then randomly generate a word for the user the guess, as well as giving them a hint as to how many letters are in the word. 
+
+The user will take turns by entering a letter via their keyboard and will receive instant feed back from the game if they have correctly guessed a letter for the word. 
+
+For every incorrect answer a life will be taken away and a body part will be added to the screen to represent that a life has been taken. If the user runs out of lives the hangman will be complete and the computer will alert the user that the game is over and what the word was. It will also ask the user if they would like to play the game again.
 
 ***
 
@@ -66,7 +74,9 @@ For this project, the following technologies were used.
 ### Languages:
 * Python
 
-### Frameworks, Libraries, Programs & Applications Used:
+### Libraries:
+* random was imported to select a random word for the game
+* os was imported to clear the screen when the game was started
 
 #### GitPod
 * GitPod was used for writing all the code for this project. It was also used to commit and push to GitHub.  
@@ -105,16 +115,16 @@ To deploy this page to [Heroku](https://id.heroku.com/login) from its GitHub rep
 1. Heroku will now deploy the site.
 
 ***
+
 ## Credits:
-
-### Acknowledgements:
-
-1. I would like to start by thanking Brian O’Hare for being my mentor for this project. 
-
-### Code:
 
 1. The clear console function was taken from [www.delfstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
 1. I used various coder forums at times when I had difficulty with aspects of the code. The use of sites such as [Geeks for Geeks](https://www.geeksforgeeks.org/) and [Stack Overflow](https://stackoverflow.com/) was hugely helpful.
+1. I created the word art for the title of the game using [Patorjk.com](https://patorjk.com/)
 1. I also used [YouTube](https://www.youtube.com/) vidoes from [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t=782s) for the hangman game and [Scratch Tutorials](https://www.youtube.com/watch?v=u4QmAIoo4i0&t=81s) for the colors, *(however I did not go ahead with this method of using colors.)*
+
+### Acknowledgements:
+
+1. I would like to start by thanking Brian O’Hare for being my mentor for this project.
 *** 
 [Back to top](#Hangman) 
