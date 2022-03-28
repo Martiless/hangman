@@ -1,21 +1,9 @@
 import random
 import os
 from words import words
+from colorama import Fore, Back, Style
 # import time
 # from enum import Enum
-
-
-# class Colors(Enum):
-#   {
-#    "RED" : "\u001b[31m",
-#     "GREEN" : "\u001b[32m",
-#    "BLUE" : "\u001b[34m",
-#    "YELLOW" : "\u001b[33m",
-#    "PURPLE" : "\u001b[35m"
-# }
-
-
-# print(f'{Colors.BLUE} This is blue text.')
 
 
 def clear_console():
@@ -42,6 +30,17 @@ def welcome_message():
     """
     Welcome message for users
     """
+    print(
+        Fore.RED +"""
+         _   _
+        | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
+        | |_| |/ _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\
+        |  _  | (_| | | | | (_| | | | | | | (_| | | | |
+        |_| |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|
+                            |___/
+        """
+    )
+    print(Style.RESET_ALL)
     print('Welcome to Hangman\n')
     print("GAME RULES:\n")
     print('Your guess has to be a valid letter')
@@ -111,7 +110,8 @@ def start_game():
         else:
             print('Not a valid letter. Try again :)')
         answer_area = ''.join(answer_list)
-        print(answer_area)
+        print(Fore.GREEN + answer_area)
+        print(Style.RESET_ALL)
 
     if lives == 0:
         print(f"""You are out of lives, sorry about that.
