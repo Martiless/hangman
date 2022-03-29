@@ -1,7 +1,9 @@
 import random
 import os
+import time
 from words import words
 from classes import Colors
+from hangman import hangman_graphic
 
 
 def clear_console():
@@ -20,7 +22,7 @@ def welcome_message():
     Welcome message for users
     """
 
-    print(f"""{Colors.red}
+    print(f"""{Colors.blue}
 
 ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗
 ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║
@@ -78,6 +80,7 @@ def start_game():
     while lives > 0 and not correct_answer:
         if ''.join(answer_area) == word:
             print('Woohoo you guessed the word! Winner!!')
+            end_game()
             break
         guesses = input('Please guess a letter\n').lower()
         # checks if the guess is only 1 letter and is in the alphabet
@@ -93,6 +96,9 @@ def start_game():
             else:
                 # takes away a life for every wrong guess
                 lives = lives - 1
+                print(f'{Colors.red}')
+                print(hangman_graphic[lives])
+                print(f'{Colors.reset}')
                 print(f"""Sorry, {guesses} isn't correct.
                 You have {lives} lives left. Guess again""")
             # add the guess to a list of letters
@@ -106,25 +112,41 @@ def start_game():
         print(f'{Colors.reset}')
 
     if lives == 0:
+        print(f'{Colors.red}')
+        print(hangman_graphic[lives])
+        print(f'{Colors.reset}')
         print(f"""You are out of lives, sorry about that.
         The word was {word}. Better luck next time!""")
 
 
 def play():
-        """
-        Asked the user if they would like to play the game and calls
-        start_game if they answer yes
-        """
-        game = input('Please enter Y or N \n').upper()
-        if game == 'Y':
-            start_game()
-        elif game == 'N':
-            print('Sorry to see you go so soon!')
-        else:
-            print('Please enter a valid answer')
-            play()
+    """
+    Asked the user if they would like to play the game and calls
+    start_game if they answer yes
+    """
+    game = input('Please enter Y or N \n').upper()
+    if game == 'Y':
+        start_game()
+    elif game == 'N':
+        print('Sorry to see you go so soon!')
+    else:
+        print('Please enter a valid answer')
+        play()
 
-# def end_game():
+
+def end_game():
+    """
+    Askes the user if they would like to play again
+    """
+    game = input('Are you ready to play again? Y or N\n').upper()
+    if game == 'Y':
+        clear_console()
+        start_game()
+    elif game == 'N':
+        print('Sorry to see you go. Come back again soon!')
+    else:
+        print('Please enter a valid answer')
+        end_game()
 
 
 def main():
@@ -133,6 +155,7 @@ def main():
     """
     welcome_message()
     play()
+    end_game()
 
 
 main()
