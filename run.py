@@ -6,10 +6,11 @@ from words import words
 from hangman import hangman_graphic
 from classes import Colors
 
-"""
-This piece of code was taken from the
-CI Love Sandwiches project
-"""
+
+# This piece of code was taken from the CI Love Sandwiches project
+# Allows other people to add words to an external sheet
+# without having to touch the code
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -20,13 +21,16 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('hangman_words')
 
-new_words = SHEET.worksheet('new_words')
-
-data = new_words.get_all_values()
-
-print(data)
+try:
+    # Gets data from google sheets worksheet
+    SHEET = GSPREAD_CLIENT.open('hangman_words')
+    new_words = SHEET.worksheet('new_words')
+    data = new_words.get_all_values()
+except OSError():
+    # If file can not be open uses words from a pre-defind list
+    print('Can not find excel file. Please check file exists')
+    data = words
 
 
 def clear_console():

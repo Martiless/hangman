@@ -10,6 +10,13 @@ This website has been created as the thrid Milestone project for Code Institute'
 
 ## Table of content: 
  1. [Site Goals](#Site-Goals)
+ 1. [UX](#UX)
+      1. [User Stories](#User-Stories)
+      1. [Development Planes](#Development-Planes)
+            * [Strategy](#Strategy)
+            * [Scope](#Scope)
+            * [Skeleton](#Skeleton)
+            * [Surface](#Surface)
  1. [How to play](#How-to-play)
  1. [Features](#Features)
  1. [Testing](#Testing)
@@ -25,11 +32,72 @@ This website has been created as the thrid Milestone project for Code Institute'
 ## Site Goals:
 
 The goals for this site are as follows:
-* 
+* To provide users with a fun, retro gaming experience.
 
 [Please see the live site here]()
 
+***
+## UX:
+## User stories:
+### New User:
+* As a new user, I am looking to play an online game of hangman.
+* As a new user, I would like to play the game in a retro game enviroment. 
+* As a new user, I would like to get live feedback on my inputs.
+
+### Returning User:
+* As a returning user, I would like to check if there have been any new words added.
+
+***
+## Development Planes:
+
+As this is a backend project I did not have the use of HTML and CSS to make the user experience a good one, however, the aim is still to make the game as pleasing to a user as possible while maintaning the retro game style. This was done using the following process. 
+
+***
+## Strategy:
+
+The strategy principal looks at user needs, as well product/service objectives. This website's target audience was broken down into two categories:
+
+### Roles:
+* New User
+* Existing User
+
+### Demographic:
+* People aged between 16 & 55 years
+
+### Psychographic:
+
+#### Lifestyle:
+* People with interest in online games 
+* People with an interst in vintage gaming
+
+### The website needs to allow users to:
+
+* Easily enter a username 
+* Easily enter letters to play the game 
+* Get live feedback of if the answer is correct or incorrect
+* See the correct answer if run out of lives
+
+### The website needs to allow the developer to:
+* Keep track of the users name 
+* Keep track of all letters guessed and add them to a list, alerting the user if they have already guessed this letter.
+
 *** 
+## Scope:
+With the structure in place, it was then time to move onto the scope plane. This was all about
+developing website requirements based on the goals set out in the strategy plane. These requirements are broken down into two categories.
+
+### Content Requirements:
+1. What will the user be looking for as they play:
+      * They will want to receive instant feedback as they go with regards to:
+      * Lives remaining both visually (from the hangman) and written (as an alert)
+      * Letters previously guessed
+      * The correct word if they run out of lives 
+
+### Functionality Requirements:
+1. The user will be able to:
+      * Add a username at the start of the game
+      * Decide if they would like to go ahead with the game after reading the instructions
+      * Decided if they would like to play again at the end of the game
 
 ## How to play:
 The traditional Hangman games was played with pen and paper. It typically involved two players, one of which came up with the word and the other guessed the letters. For each incorrect answer a body part gets added to the image until the second player either guesses the word or runs out the lives.
