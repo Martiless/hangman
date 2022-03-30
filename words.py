@@ -20,4 +20,3 @@ words = [
     'pythvon',
     'about'
     ]
-    
