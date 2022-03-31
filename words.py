@@ -17,6 +17,6 @@ words = [
     'young',
     'market',
     'usage',
-    'pythvon',
+    'python',
     'about'
     ]

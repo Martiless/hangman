@@ -1,10 +1,10 @@
 import random
-import os
 import gspread
 from google.oauth2.service_account import Credentials
 from words import words
-from hangman import hangman_graphic
-from classes import Colors
+from utils.hangman import hangman_graphic
+from utils.display import Colors
+from utils.display import Display
 
 
 # This piece of code was taken from the CI Love Sandwiches project
@@ -33,15 +33,11 @@ except OSError():
     data = words
 
 
-def clear_console():
+def new_word():
     """
-    Checks to see what os if the computer is running Windows
-    This piece of code was taken from www.delfstack.com
+    Gets the words for the game from the excel sheet
     """
-    command = 'clear'
-    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
-        command = 'cls'
-    os.system(command)
+    data = SHEET.worksheet('new_words')
 
 
 def welcome_message():
@@ -88,7 +84,8 @@ def start_game():
     This starts the game once the user has entered a name
     """
     # clears the inital instructions from the screen once the game starts
-    clear_console()
+    display = Display
+    display.clear_console()
     word = pick_word()
     word_len = len(word)
     # creates area of underscores that equals length of the word
@@ -167,7 +164,7 @@ def end_game():
     """
     game = input('Are you ready to play again? Y or N\n').upper()
     if game == 'Y':
-        clear_console()
+        Display.clear_console()
         start_game()
     elif game == 'N':
         print('Sorry to see you go. Come back again soon!')
