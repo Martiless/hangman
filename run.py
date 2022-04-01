@@ -22,16 +22,6 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-try:
-    # Gets data from google sheets worksheet
-    SHEET = GSPREAD_CLIENT.open('hangman_words')
-    new_words = SHEET.worksheet('new_words')
-    data = new_words.get_all_values()
-except OSError():
-    # If file can not be open uses words from a pre-defind list
-    print('Can not find excel file. Please check file exists')
-    data = words
-
 
 def welcome_message():
     """
@@ -68,12 +58,22 @@ def pick_word():
     """
     This will randomly pick a word from a list of words
     """
-
-    list_of_words = SHEET.worksheet('new_words')
-    lists = list_of_words.get_all_values()
-    word = random.choice(lists)
-    string = word[0]
-    return string.lower()  # will return all words in lower case
+    try:
+        # Gets data from google sheets worksheet
+        SHEET = GSPREAD_CLIENT.open('hangman_words')
+        # Getting the list from the excel file
+        list_of_words = SHEET.worksheet('new_words')
+        lists = list_of_words.get_all_values()
+        selection = random.choice(lists)
+        # Converting the list to a string
+        word = selection[0]
+        return word.lower()  # will return all words in lower case
+    except:
+        # If file can not be open uses words from a pre-defined list
+        print("""Can not find excel file. Please check file exists. 
+        Word has been taken from backup file.\n""")
+        selection = random.choice(words)
+        return selection.lower()
 
 
 def start_game():
@@ -90,15 +90,14 @@ def start_game():
     answer_list = list(answer_area)
     # empty list to add the guessed letters to once they are inputted
     letters_guessed = []
-    correct_answer = False
     lives = 7
     print('Lets start the game\n')
     print(f'Hint: The word is {word_len} letters long\n')
     print(answer_area)
 
-    # if lives is more than 0 and correct_answer is false
+    # if lives is more than 0
     # the loop will keep running
-    while lives > 0 and not correct_answer:
+    while lives > 0:
         if ''.join(answer_area) == word:
             print('Woohoo you guessed the word! Winner!!')
             end_game()
@@ -174,7 +173,7 @@ def main():
     """
     The main function that calls all other functions
     """
-    # welcome_message()
+    welcome_message()
     play()
     end_game()
 
