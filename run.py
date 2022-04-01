@@ -33,13 +33,6 @@ except OSError():
     data = words
 
 
-def new_word():
-    """
-    Gets the words for the game from the excel sheet
-    """
-    data = SHEET.worksheet('new_words')
-
-
 def welcome_message():
     """
     Welcome message for users
@@ -75,8 +68,12 @@ def pick_word():
     """
     This will randomly pick a word from a list of words
     """
-    word = random.choice(words)
-    return word.lower()  # will return all words in lower case
+
+    list_of_words = SHEET.worksheet('new_words')
+    lists = list_of_words.get_all_values()
+    word = random.choice(lists)
+    string = word[0]
+    return string.lower()  # will return all words in lower case
 
 
 def start_game():
@@ -177,7 +174,7 @@ def main():
     """
     The main function that calls all other functions
     """
-    welcome_message()
+    # welcome_message()
     play()
     end_game()
 
