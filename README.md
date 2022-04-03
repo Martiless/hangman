@@ -214,7 +214,7 @@ This code has been manually tested in the following ways:
 1. Colors not working:
       * I initially tried to use "from colorama import Fore, Back, Style" this worked in the GitPod environment but when I looked at it in Heroku it was throwing up an error. I solved this by creating a class called Colors in a separate python file and then imported that class into the main game file. This solved the problem and the colors worked correctly in Heruko. 
 1. Try/Except exception being overwritten by gspreads file:
-      * After testing the try/except by changing the name of the excel the game broke, this was because a try/except in the gspread client.py file was being implemented over my one. After looking around I found that for my try/except to cover all error types I needed to remove the error handler which then prevented the client.py try/except to overwrite the once in the run.py file. 
+      * After testing the try/except by changing the name of the excel the game broke, this was because a try/except in the gspread client.py file was being implemented over my one. After looking around I found that I could find the type of exception gspread was using. Once I knew this I was able to put that class name into my try/except which corrected the error. 
 ***
 [Back to top](#Hangman) 
 

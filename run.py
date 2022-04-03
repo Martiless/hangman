@@ -1,3 +1,4 @@
+# Import external modules 
 import random
 import gspread
 from google.oauth2.service_account import Credentials
@@ -68,7 +69,7 @@ def pick_word():
         # Converting the list to a string
         word = selection[0]
         return word.lower()  # will return all words in lower case
-    except:
+    except gspread.exceptions.SpreadsheetNotFound:
         # If file can not be open uses words from a pre-defined list
         print("""Can not find excel file. Please check file exists.
         Word has been taken from backup file.\n""")
