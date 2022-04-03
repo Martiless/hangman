@@ -1,5 +1,7 @@
 # Hangman 
 
+![Am I Responsive](assets/am_i_responsive.png)
+
 This website has been created as the third Milestone project for Code Institute's Full Stack Software Development Diploma. It was built using Python. GitPod was used for writing the code for this website, as well as committing and pushing to GitHub. Once all the code had been written, Heroku was then used to deploy the website. 
 
 
