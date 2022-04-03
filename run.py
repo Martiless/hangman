@@ -1,4 +1,4 @@
-# Import external modules 
+# Import external modules
 import random
 import gspread
 from google.oauth2.service_account import Credentials

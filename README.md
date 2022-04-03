@@ -227,6 +227,16 @@ For this project, the following technologies were used.
 ### Libraries:
 * random was imported to select a random word for the game
 * os was imported to clear the screen when the game was started
+* gspread and google auth imported to link with excel file
+
+### Google sheets:
+* Google sheets was used to import a list of words that the game would then randomly pick from. You can view the Google Sheets file [here](https://docs.google.com/spreadsheets/d/1UqaN-Ww_uK3turJ_RKvou-lluRP9Slq-D0mGuKqDMtQ/edit?usp=sharing)
+
+<details>
+<summary>Google Sheets</summary>
+
+![Google Sheets](assets/google_sheets.png)
+</details>
 
 #### GitPod
 * GitPod was used for writing all the code for this project. It was also used to commit and push to GitHub.  
