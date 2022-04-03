@@ -1,9 +1,9 @@
 # Hangman 
 
-This website has been created as the thrid Milestone project for Code Institute's Full Stack Software Development Diploma. It was built using Python. GitPod was used for writing the code for this website, as well as committing and pushing to GitHub. Once all the code had been written, Heroku was then used to deploy the website. 
+This website has been created as the third Milestone project for Code Institute's Full Stack Software Development Diploma. It was built using Python. GitPod was used for writing the code for this website, as well as committing and pushing to GitHub. Once all the code had been written, Heroku was then used to deploy the website. 
 
 
-### View the live website [here]()
+### View the live website [here](https://hangman-command.herokuapp.com/)
 ***
 
 
@@ -40,14 +40,14 @@ This website has been created as the thrid Milestone project for Code Institute'
 The goals for this site are as follows:
 * To provide users with a fun, retro gaming experience.
 
-[Please see the live site here]()
+[Please see the live site here](https://hangman-command.herokuapp.com/)
 
 ***
 ## UX:
 ## User stories:
 ### New User:
 * As a new user, I am looking to play an online game of hangman.
-* As a new user, I would like to play the game in a retro game enviroment. 
+* As a new user, I would like to play the game in a retro game environment. 
 * As a new user, I would like to get live feedback on my inputs.
 
 ### Returning User:
@@ -56,7 +56,7 @@ The goals for this site are as follows:
 ***
 ## Development Planes:
 
-As this is a backend project I did not have the use of HTML and CSS to make the user experience a good one, however, the aim is still to make the game as pleasing to a user as possible while maintaning the retro game style. This was done using the following process. 
+As this is a backend project I did not have the use of HTML and CSS to make the user experience a good one, however, the aim is still to make the game as pleasing to a user as possible while maintaining the retro game style. This was done using the following process. 
 
 ***
 ## Strategy:
@@ -73,18 +73,18 @@ The strategy principal looks at user needs, as well product/service objectives. 
 ### Psychographic:
 
 #### Lifestyle:
-* People with interest in online games 
-* People with an interst in vintage gaming
+* People with an interest in online games 
+* People with an interest in vintage gaming
 
 ### The website needs to allow users to:
 
 * Easily enter a username 
 * Easily enter letters to play the game 
-* Get live feedback of if the answer is correct or incorrect
+* Get live feedback on if the answer is correct or incorrect
 * See the correct answer if run out of lives
 
 ### The website needs to allow the developer to:
-* Keep track of the users name 
+* Keep track of the user's name 
 * Keep track of all letters guessed and add them to a list, alerting the user if they have already guessed this letter.
 
 *** 
@@ -97,7 +97,7 @@ developing website requirements based on the goals set out in the strategy plane
       * They will want to receive instant feedback as they go with regards to:
       * Lives remaining both visually (from the hangman) and written (as an alert)
       * Letters previously guessed
-      * The correct word if they run out of lives 
+      * What the correct word is if they run out of lives 
 
 ### Functionality Requirements:
 1. The user will be able to:
@@ -108,7 +108,7 @@ developing website requirements based on the goals set out in the strategy plane
 *** 
 
 ## Skeleton:
-The flowchat for this project was created using [figma](https://www.figma.com/) and was a guide for the whole project. 
+The flowchart for this project was created using [Figma](https://www.figma.com/) and was a guide for the whole project. 
 <details>
 <summary>Flowchart</summary>
 
@@ -127,14 +127,14 @@ To make this game a bit more visually appealing to users I included colors throu
 
 
 ## How to play:
-The traditional Hangman games was played with pen and paper. It typically involved two players, one of which came up with the word and the other guessed the letters. For each incorrect answer a body part gets added to the image until the second player either guesses the word or runs out the lives.
+The traditional Hangman games were played with pen and paper. It typically involved two players, one of which came up with the word and the other guessed the letters. For each incorrect answer, a body part gets added to the image until the second player either guessed the word or runs out the lives.
 
 In this version of the game, the player will enter a name to start the game.
-The compute will then randomly generate a word for the user the guess, as well as giving them a hint as to how many letters are in the word. 
+The computer will then randomly generate a word for the user the guess, as well as give them a hint as to how many letters are in the word. 
 
-The user will take turns by entering a letter via their keyboard and will receive instant feed back from the game if they have correctly guessed a letter for the word. 
+The user will take a turn by entering a letter via their keyboard and will receive instant feedback from the game if they have correctly guessed a letter for the word. 
 
-For every incorrect answer a life will be taken away and a body part will be added to the screen to represent that a life has been taken. If the user runs out of lives the hangman will be complete and the computer will alert the user that the game is over and what the word was. It will also ask the user if they would like to play the game again.
+For every incorrect answer, a life will be taken away and a body part will be added to the screen to represent that a life has been taken. If the user runs out of lives the hangman will be complete and the computer will alert the user that the game is over and what the word was. It will also ask the user if they would like to play the game again.
 
 ***
 
@@ -143,7 +143,7 @@ For every incorrect answer a life will be taken away and a body part will be add
 The game had the following features:
 
 ## A welcome message for users:
-* User instantly see a welcome message telling them the rules of the game and asking for a name. Once the have entered a valid name the computer then sends back a message that includes the name the enters
+* The user instantly sees a welcome message telling them the rules of the game and asking for a name. Once they have entered a valid name the computer then sends back a message that includes the name they entered
 
 ![Welcome Message](assets/welcome_message.png)
 
@@ -151,12 +151,12 @@ The game had the following features:
 
 
 ## Hint and User input:
-* Once the user has decided the play the game the computer will give them a hint to how many letters are in the word they need to guess and also ask them to start guessing letters 
+* Once the user has decided the play the game the computer will give them a hint as to how many letters are in the word they need to guess and also ask them to start guessing letters 
 
 ![Game Hint and User Input](assets/game_hint.png)
 
 ## Instant Feedback:
-* Throughout the game the computer will give the user instant feedback on weither or not their guess is correct. 
+* Throughout the game, the computer will give the user instant feedback on whether or not their guess is correct. 
 * Correct guesses will appear on the screen as green letters
 * Incorrect guesses as a red hangman visual. 
 
@@ -166,7 +166,7 @@ The game had the following features:
  
   
 ## Input Validation:
-* The usesr will instantly receive feedback as to if they have enter a valid input or not
+* The user will instantly receive feedback as to if they have entered a valid input or not
 
 ![Input Validation](assets/invalid_answer.png)
   
@@ -180,7 +180,7 @@ The game had the following features:
 
 ## Future Features:
  
-* Difficulty levels, this can be achieved by having seperate sheets in the excel with longer words and possibly adding a timer to the game.
+* Difficulty levels can be achieved by having separate sheets in excel with longer words and possibly adding a timer to the game.
 * Add a scoring system, that will keep track of scores on a leader board.
 
 ***
@@ -188,9 +188,9 @@ The game had the following features:
 ## Testing:
 
 This code has been manually tested in the following ways: 
-   1. Testing user input validation by purposly entering invalid inputs
+   1. Testing user input validation by purposely entering invalid inputs
    1. Testing the try/except by changing the name on the external excel file 
-   1. Testing in the local terminal withing GitPod and on the fake terminal on Heroku
+   1. Testing in the local terminal within GitPod and on the fake terminal on Heroku
    1. Debugging code by using a program locally called PyCharm
    1. Validating code by running it through a [PEP8 Linter](http://pep8online.com/)
 
@@ -199,20 +199,20 @@ This code has been manually tested in the following ways:
 ## Bugs:
 1. Pick word function was not working correctly:
       * When importing the list of words to the run.py file I had incorrectly written the line of code that imports the data. import and from where in the wrong places. Once I corrected this error the pick_word function worked as intended. 
-1. Welcome message was instantly dissapearing when the game was run:
-      * Add a new function that allowed the used to interact more with the game, which inturn keeps the rules on the screen until they are ready to play. 
-1.  Clear screen function was not working:
-      * As this was a new concept to me I was unsure of what the correct paramaters should be. I troubleshooted and found a solution that allows the program to check what os is being used. 
+1. The welcome message was instantly disappearing when the game was run:
+      * Add a new function that allowed the user to interact more with the game, which in turn keeps the rules on the screen until they are ready to play. 
+1.  The clear screen function was not working:
+      * As this was a new concept to me I was unsure of what the correct parameters should be. I troubleshot and found a solution that allows the program to check what os is being used. 
 1. Getting the correct letters to add to the answer_area:
       * I added a line of code into the start game function that included the .join() method. This did work to add the correctly guessed letter to the answer area but it also created more problems as stated below.  
 1. The guessed letters could be guessed over and over again:
       * I rearranged the if statement in the start game function. Instead of the correct answer being checked first and the user getting a notice to say it was in the work, I changed it so the program checked if the letter had been picked already first, then if it wasn't in the word and then if it was. This solved the issue of being about to guess a correct letter over and over again.
-1. The correct letter would go into the answer_area servel times:
+1. The correct letter would go into the answer_area several times:
       * Once I had figured out that I needed to use .join() to add the correct letters to the answer area, I began to encounter another problem, that being the letter would appear several times in the answer area. I decided to use a debugger and see if I could locate the issue. I had put the wrong variable into the .join() method, which I did not pick up on at first glance.
 1. Colors not working:
-      * I initially tried to use "from colorama import Fore, Back, Style" this working in the github enviroment but when I looked at it in Hekoku it was throwing up an error. I solved this by creating a class called Colors in a seperate python file and then imported that classes into the main game file. This soloved the problem and the colors worked correctly in Heruko. 
+      * I initially tried to use "from colorama import Fore, Back, Style" this worked in the GitPod environment but when I looked at it in Heroku it was throwing up an error. I solved this by creating a class called Colors in a separate python file and then imported that class into the main game file. This solved the problem and the colors worked correctly in Heruko. 
 1. Try/Except exception being overwritten by gspreads file:
-      * After testing the try/except by changing the name of the excel the game broke, this was because a try/except in the gspread client.py file was being implemented over my one. After looking around I found that in order for my try/excpet to cover all error types I needed to remove the error handler which then prevented the client.py try/except to overwrite the once in the run.py file. 
+      * After testing the try/except by changing the name of the excel the game broke, this was because a try/except in the gspread client.py file was being implemented over my one. After looking around I found that for my try/except to cover all error types I needed to remove the error handler which then prevented the client.py try/except to overwrite the once in the run.py file. 
 ***
 [Back to top](#Hangman) 
 
@@ -233,13 +233,13 @@ For this project, the following technologies were used.
 * GitHub was used to store this project.
 
 ### Heroku 
-* Heroku was used to delpoy the project. Please see below for deployment method. 
+* Heroku was used to deploy the project. Please see below for the deployment method. 
 
 *** 
 
 ## Validation:
 
-The code in all python files for this project were validated in [PEP8 online](http://pep8online.com/)
+The code in all python files for this project was validated in [PEP8 online](http://pep8online.com/)
 ### Run File:
 <details>
 <summary>Run file</summary>
@@ -283,9 +283,9 @@ To deploy this page to [Heroku](https://id.heroku.com/login) from its GitHub rep
 1. Open the "Reveal Config Vars" section and input the following information -  KEY: PORT, VALUE: 8000. 
       * Nothing else is needed here for this project
 1. Under the Config Vars section in "Settings" select "BuildPack" and select Python and Nodejs, 
-      * Making sure they are in this order.
+      * Make sure they are in this order.
 1. Now go to the "Deploy" tab at the top of the page and select your deploy method and repository.
-1. In "Delpoyment Method" click on "GitHub" to connect them. 
+1. In "Deployment Method" click on "GitHub" to connect them. 
 1. Once they are connected search for the repository you want and hit "connect".
 1. Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section. 
       * *Note, if you click on Automatic Deploys, you will still need to hit deploy branch to build the site* 
@@ -296,13 +296,14 @@ To deploy this page to [Heroku](https://id.heroku.com/login) from its GitHub rep
 
 ## Credits:
 
+1. The code to import the excel file was taken from the CI Love Sandwich walkthrough project and edited to suit this project. 
 1. The clear console function was taken from [www.delfstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
 1. I used various coder forums at times when I had difficulty with aspects of the code. The use of sites such as [Geeks for Geeks](https://www.geeksforgeeks.org/) and [Stack Overflow](https://stackoverflow.com/) was hugely helpful.
 1. I created the word art for the title of the game using [Patorjk.com](https://patorjk.com/)
-1. I also used [YouTube](https://www.youtube.com/) vidoes from [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t=782s) for the hangman game and [Scratch Tutorials](https://www.youtube.com/watch?v=u4QmAIoo4i0&t=81s) for the colors, *(however I did not go ahead with this method of using colors.)*
+1. I also used [YouTube](https://www.youtube.com/) videos from [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t=782s) for the hangman game and [Scratch Tutorials](https://www.youtube.com/watch?v=u4QmAIoo4i0&t=81s) for the colors, *(however I did not go ahead with this method of using colors.)*
 
 ### Acknowledgements:
 
-1. I would like to start by thanking Brian O’Hare for being my mentor for this project.
+1. I would like to thank Brian O’Hare for being my mentor for this project.
 *** 
 [Back to top](#Hangman) 
