@@ -145,7 +145,7 @@ def play():
     Asked the user if they would like to play the game and calls
     start_game if they answer yes
     """
-    game = input('Please enter Y or N \n').upper()
+    game = input('Please enter Y(es) or N(o) \n').upper()
     if game == 'Y':
         start_game()
     elif game == 'N':
@@ -159,7 +159,7 @@ def end_game():
     """
     Askes the user if they would like to play again
     """
-    game = input('Are you ready to play again? Y or N\n').upper()
+    game = input('Are you ready to play again? Y(es) or N(o) \n').upper()
     if game == 'Y':
         Display.clear_console()
         start_game()
