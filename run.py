@@ -70,7 +70,7 @@ def pick_word():
         return word.lower()  # will return all words in lower case
     except:
         # If file can not be open uses words from a pre-defined list
-        print("""Can not find excel file. Please check file exists. 
+        print("""Can not find excel file. Please check file exists.
         Word has been taken from backup file.\n""")
         selection = random.choice(words)
         return selection.lower()
@@ -86,7 +86,7 @@ def start_game():
     word = pick_word()
     word_len = len(word)
     # creates area of underscores that equals length of the word
-    answer_area = "_" * len(word)
+    answer_area = "-" * len(word)
     answer_list = list(answer_area)
     # empty list to add the guessed letters to once they are inputted
     letters_guessed = []

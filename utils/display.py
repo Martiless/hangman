@@ -23,6 +23,7 @@ class Display:
         This piece of code was taken from www.delfstack.com
         """
         command = 'clear'
-        if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        # If Machine is running on Windows, use cls
+        if os.name in ('nt', 'dos'):
             command = 'cls'
         os.system(command)

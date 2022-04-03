@@ -19,10 +19,16 @@ This website has been created as the thrid Milestone project for Code Institute'
             * [Surface](#Surface)
  1. [How to play](#How-to-play)
  1. [Features](#Features)
+      * [Welcome Message for users](#a-welcome-message-for-users)
+      * [Hint and User Input](#hint-and-user-input)
+      * [Instant Feedback](#instant-feedback)
+      * [Input Validation](#input-validation)
+      * [Restart Game](#restart-game)
  1. [Testing](#Testing)
  1. [Bugs](#Bugs)
  1. [Unfixed Bugs](#Unfixed-bugs)
  1. [Technologies Used](#Technologies-Used)
+ 1. [Validation](#Validation)
  1. [Deployment](#Deployment)
  1. [Credits](#Credits)
  1. [Acknowledgements](#acknowledgements)
@@ -99,6 +105,27 @@ developing website requirements based on the goals set out in the strategy plane
       * Decide if they would like to go ahead with the game after reading the instructions
       * Decided if they would like to play again at the end of the game
 
+*** 
+
+## Skeleton:
+The flowchat for this project was created using [figma](https://www.figma.com/) and was a guide for the whole project. 
+<details>
+<summary>Flowchart</summary>
+
+![flowchart](assets/hangman_python_project.png)
+</details>
+
+***
+
+## Surface:
+To make this game a bit more visually appealing to users I included colors throughout it. 
+ * The game begins with a blue logo
+ * The answer area is green
+ * The hangman visual appears in red
+
+***
+
+
 ## How to play:
 The traditional Hangman games was played with pen and paper. It typically involved two players, one of which came up with the word and the other guessed the letters. For each incorrect answer a body part gets added to the image until the second player either guesses the word or runs out the lives.
 
@@ -113,7 +140,61 @@ For every incorrect answer a life will be taken away and a body part will be add
 
 ## Features:
 
+The game had the following features:
+
+## A welcome message for users:
+* User instantly see a welcome message telling them the rules of the game and asking for a name. Once the have entered a valid name the computer then sends back a message that includes the name the enters
+
+![Welcome Message](assets/welcome_message.png)
+
+![Username ](assets/user_input_1.png)
+
+
+## Hint and User input:
+* Once the user has decided the play the game the computer will give them a hint to how many letters are in the word they need to guess and also ask them to start guessing letters 
+
+![Game Hint and User Input](assets/game_hint.png)
+
+## Instant Feedback:
+* Throughout the game the computer will give the user instant feedback on weither or not their guess is correct. 
+* Correct guesses will appear on the screen as green letters
+* Incorrect guesses as a red hangman visual. 
+
+![Correct Guess](assets/correct_answer.png)
+
+![Incorrect Guess](assets/incorrect_answer.png)
+ 
+  
+## Input Validation:
+* The usesr will instantly receive feedback as to if they have enter a valid input or not
+
+![Input Validation](assets/invalid_answer.png)
+  
+
+## Restart Game 
+* Once the user has either used all their lives or guessed all the correct letters the computer will give the user the option to end the game or go again. 
+ 
+![Restart Game](assets/restart_game.png)
+
 ***
+
+## Future Features:
+ 
+* Difficulty levels, this can be achieved by having seperate sheets in the excel with longer words and possibly adding a timer to the game.
+* Add a scoring system, that will keep track of scores on a leader board.
+
+***
+
+## Testing:
+
+This code has been manually tested in the following ways: 
+   1. Testing user input validation by purposly entering invalid inputs
+   1. Testing the try/except by changing the name on the external excel file 
+   1. Testing in the local terminal withing GitPod and on the fake terminal on Heroku
+   1. Debugging code by using a program locally called PyCharm
+   1. Validating code by running it through a [PEP8 Linter](http://pep8online.com/)
+
+*** 
 
 ## Bugs:
 1. Pick word function was not working correctly:
@@ -130,9 +211,8 @@ For every incorrect answer a life will be taken away and a body part will be add
       * Once I had figured out that I needed to use .join() to add the correct letters to the answer area, I began to encounter another problem, that being the letter would appear several times in the answer area. I decided to use a debugger and see if I could locate the issue. I had put the wrong variable into the .join() method, which I did not pick up on at first glance.
 1. Colors not working:
       * I initially tried to use "from colorama import Fore, Back, Style" this working in the github enviroment but when I looked at it in Hekoku it was throwing up an error. I solved this by creating a class called Colors in a seperate python file and then imported that classes into the main game file. This soloved the problem and the colors worked correctly in Heruko. 
-
-
-1. 
+1. Try/Except exception being overwritten by gspreads file:
+      * After testing the try/except by changing the name of the excel the game broke, this was because a try/except in the gspread client.py file was being implemented over my one. After looking around I found that in order for my try/excpet to cover all error types I needed to remove the error handler which then prevented the client.py try/except to overwrite the once in the run.py file. 
 ***
 [Back to top](#Hangman) 
 
@@ -156,11 +236,40 @@ For this project, the following technologies were used.
 * Heroku was used to delpoy the project. Please see below for deployment method. 
 
 *** 
-[Back to top](#Hangman)
 
+## Validation:
 
+The code in all python files for this project were validated in [PEP8 online](http://pep8online.com/)
+### Run File:
+<details>
+<summary>Run file</summary>
+
+![Run File](assets/run_file_validation.png)
+</details>
+
+### Words File:
+<details>
+<summary>Words file</summary>
+
+![Words File](assets/words_file_validation.png)
+</details>
+
+### Display File: 
+<details>
+<summary>Display file</summary>
+
+![Display File](assets/display_file_validtion.png)
+</details>
+
+### Hangman Visual File:
+<details>
+<summary>Hangman Visual file</summary>
+
+![Hangman Visual File](assets/hangman_file_validation.png)
+</details>
 
 ***
+
 ## Deployment:
 This project was developed using [GitPod](https://gitpod.io/), committed and pushed to [GitHub](https://github.com/) using a GitPod terminal.
 
@@ -183,6 +292,7 @@ To deploy this page to [Heroku](https://id.heroku.com/login) from its GitHub rep
 1. Heroku will now deploy the site.
 
 ***
+[Back to top](#Hangman)
 
 ## Credits:
 
